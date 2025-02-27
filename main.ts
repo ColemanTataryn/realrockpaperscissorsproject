@@ -16,6 +16,7 @@ input.onButtonPressed(Button.A, function () {
             . # # # .
             . . . . .
             `)
+        music.play(music.createSoundExpression(WaveShape.Triangle, 1462, 5000, 0, 255, 2000, SoundExpressionEffect.Warble, InterpolationCurve.Logarithmic), music.PlaybackMode.UntilDone)
     } else if (User == 2) {
         basic.showLeds(`
             . # # # .
@@ -24,6 +25,7 @@ input.onButtonPressed(Button.A, function () {
             . # # # .
             . # # # .
             `)
+        music.play(music.createSoundExpression(WaveShape.Sawtooth, 1, 5000, 255, 255, 2000, SoundExpressionEffect.Tremolo, InterpolationCurve.Curve), music.PlaybackMode.UntilDone)
     } else {
         basic.showLeds(`
             # # . . #
@@ -32,6 +34,7 @@ input.onButtonPressed(Button.A, function () {
             # # . # .
             # # . . #
             `)
+        music.play(music.createSoundExpression(WaveShape.Square, 1, 5000, 255, 255, 2000, SoundExpressionEffect.Vibrato, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
     }
     Computer = randint(1, 3)
     if (User == 1 == (Computer == 3)) {
@@ -52,3 +55,4 @@ basic.showLeds(`
     . # # # .
     . . . . .
     `)
+music.play(music.stringPlayable("C E C F G B A C5 ", 160), music.PlaybackMode.UntilDone)
